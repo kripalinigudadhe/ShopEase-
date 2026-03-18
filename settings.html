@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Settings — ShopEase</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head><body class="app">
+<nav class="sidebar"><div class="brand">ShopEase</div><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="products.html">Products</a></li><li><a href="sales.html">Sales</a></li><li><a href="customers.html">Customers</a></li><li><a href="reports.html">Reports</a></li><li><a href="settings.html" class="active">Settings</a></li>
+</ul></nav>
+<header class="topbar"><button id="toggleSidebar" class="icon-btn">☰</button></header>
+<main class="content">
+  <section class="card">
+    <h3>Theme</h3>
+    <button id="toggleTheme" class="primary">Toggle Theme</button>
+  </section>
+  <section class="card">
+    <h3>Backup & Restore</h3>
+    <button id="exportData" class="muted">Export Data (JSON)</button>
+    <input id="importFile" type="file" accept="application/json" />
+    <button id="resetData" class="danger">Reset All Data</button>
+  </section>
+</main>
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Settings } from './assets/js/settings.js';
+document.addEventListener('DOMContentLoaded', ()=>{ UI.init(); Storage.init(); Settings.init(); });
+</script>
+</body></html>

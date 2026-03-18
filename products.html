@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Products — ShopEase</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head>
+<body class="app">
+<nav class="sidebar" id="sidebar"><div class="brand">ShopEase</div><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="products.html" class="active">Products</a></li><li><a href="sales.html">Sales</a></li><li><a href="customers.html">Customers</a></li><li><a href="reports.html">Reports</a></li><li><a href="settings.html">Settings</a></li>
+</ul></nav>
+<header class="topbar"><button id="toggleSidebar" class="icon-btn">☰</button><div class="top-right"><button id="addProductBtn" class="primary">+ Add Product</button></div></header>
+<main class="content">
+  <section class="card">
+    <div class="row">
+      <input id="searchProduct" placeholder="Search by name or code..." />
+      <select id="filterCategory"><option value="">All Categories</option></select>
+      <button id="importProducts" class="muted">Import</button>
+      <button id="exportProducts" class="muted">Export</button>
+    </div>
+    <div class="table-wrap">
+      <table id="productsTable">
+        <thead>
+          <tr><th>Code</th><th>Name</th><th>Category</th><th>Qty</th><th>Buy</th><th>Sell</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Products } from './assets/js/products.js';
+document.addEventListener('DOMContentLoaded', ()=>{ UI.init(); Storage.init(); Products.init(); });
+</script>
+</body></html>

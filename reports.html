@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Reports — ShopEase</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head><body class="app">
+<nav class="sidebar"><div class="brand">ShopEase</div><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="products.html">Products</a></li><li><a href="sales.html">Sales</a></li><li><a href="customers.html">Customers</a></li><li><a href="reports.html" class="active">Reports</a></li><li><a href="settings.html">Settings</a></li>
+</ul></nav>
+<header class="topbar"><button id="toggleSidebar" class="icon-btn">☰</button></header>
+<main class="content">
+  <section class="card">
+    <div class="row">
+      <input id="reportDate" type="date"/>
+      <button id="generateReport" class="primary">Generate</button>
+      <button id="exportJSON" class="muted">Export All</button>
+    </div>
+  </section>
+  <section class="card full">
+    <h3>Report</h3>
+    <div id="reportResult"></div>
+    <canvas id="reportChart" height="140"></canvas>
+  </section>
+</main>
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Reports } from './assets/js/reports.js';
+document.addEventListener('DOMContentLoaded', ()=>{ UI.init(); Storage.init(); Reports.init(); });
+</script>
+</body></html>

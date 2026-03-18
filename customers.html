@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Customers — ShopEase</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head><body class="app">
+<nav class="sidebar"><div class="brand">ShopEase</div><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="products.html">Products</a></li><li><a href="sales.html">Sales</a></li><li><a href="customers.html" class="active">Customers</a></li><li><a href="reports.html">Reports</a></li><li><a href="settings.html">Settings</a></li>
+</ul></nav>
+<header class="topbar"><button id="toggleSidebar" class="icon-btn">☰</button><div class="top-right"><button id="addCustomerBtn" class="primary">+ Add Customer</button></div></header>
+<main class="content">
+  <section class="card">
+    <div class="row">
+      <input id="searchCustomer" placeholder="Search customers..." />
+      <button id="exportCustomers" class="muted">Export</button>
+    </div>
+    <div id="customersList"></div>
+  </section>
+</main>
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Customers } from './assets/js/customers.js';
+document.addEventListener('DOMContentLoaded', ()=>{ UI.init(); Storage.init(); Customers.init(); });
+</script>
+</body></html>

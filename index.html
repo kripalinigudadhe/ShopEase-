@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ShopEase — Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head>
+<body class="app">
+<div id="splash" class="splash">ShopEase — Simplify Your Store</div>
+<nav class="sidebar" id="sidebar">
+  <div class="brand">ShopEase</div>
+  <ul>
+    <li><a href="index.html" class="active">Dashboard</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="sales.html">Sales</a></li>
+    <li><a href="customers.html">Customers</a></li>
+    <li><a href="reports.html">Reports</a></li>
+    <li><a href="settings.html">Settings</a></li>
+  </ul>
+</nav>
+<header class="topbar">
+  <button id="toggleSidebar" class="icon-btn">☰</button>
+  <div class="top-right">
+    
+  </div>
+</header>
+<main class="content">
+  <section class="grid cards" id="stats">
+    <div class="card">
+      <h3>Total Products</h3>
+      <div class="stat" id="totalProducts">0</div>
+    </div>
+    <div class="card">
+      <h3>Total Stock Value</h3>
+      <div class="stat" id="stockValue">₹0</div>
+    </div>
+    <div class="card">
+      <h3>Sales Today</h3>
+      <div class="stat" id="salesToday">₹0</div>
+    </div>
+    <div class="card">
+      <h3>Profit Today</h3>
+      <div class="stat" id="profitToday">₹0</div>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card full">
+      <h3>Sales Trend (7 days)</h3>
+      <canvas id="trendChart" height="120"></canvas>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Low Stock Alerts</h3>
+      <ul id="lowStockList"></ul>
+    </div>
+    <div class="card">
+      <h3>Insights</h3>
+      <div id="insights"></div>
+    </div>
+  </section>
+</main>
+
+<!-- Modals -->
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Dashboard } from './assets/js/dashboard.js';
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  UI.init();
+  Storage.init();
+  Dashboard.init();
+});
+</script>
+</body>
+</html>

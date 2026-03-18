@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Sales — ShopEase</title>
+<link rel="stylesheet" href="assets/style.css">
+<script type="module" src="assets/js/main.js" defer></script>
+</head><body class="app">
+<nav class="sidebar"><div class="brand">ShopEase</div><ul>
+<li><a href="index.html">Dashboard</a></li><li><a href="products.html">Products</a></li><li><a href="sales.html" class="active">Sales</a></li><li><a href="customers.html">Customers</a></li><li><a href="reports.html">Reports</a></li><li><a href="settings.html">Settings</a></li>
+</ul></nav>
+<header class="topbar"><button id="toggleSidebar" class="icon-btn">☰</button><div class="top-right"><button id="addSaleBtn" class="primary">+ Add Sale</button></div></header>
+<main class="content">
+  <section class="card">
+    <form id="saleForm" class="form-inline">
+      <select id="saleProduct"></select>
+      <input id="saleQuantity" type="number" min="1" placeholder="Quantity" />
+      <select id="saleCustomer"><option value="">Walk-in</option></select>
+      <button type="submit" class="primary">Record Sale</button>
+    </form>
+  </section>
+  <section class="card">
+    <h3>Sales History</h3>
+    <div id="salesHistory"></div>
+  </section>
+</main>
+<div id="modalRoot"></div>
+<script type="module">
+import { UI } from './assets/js/ui.js';
+import { Storage } from './assets/js/storage.js';
+import { Sales } from './assets/js/sales.js';
+document.addEventListener('DOMContentLoaded', ()=>{ UI.init(); Storage.init(); Sales.init(); });
+</script>
+</body></html>
